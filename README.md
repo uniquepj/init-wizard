@@ -20,7 +20,7 @@ To initialize a new or existing project, navigate to your project directory and 
 - npx (without downloading the package)
 
 ```bash
-npx init-wizard
+npx init-wizard@latest
 ```
 
 #### Example
