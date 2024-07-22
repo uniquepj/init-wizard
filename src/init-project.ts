@@ -12,15 +12,15 @@ const initProject = (answers: Answers) => {
   const packageJson = JSON.parse(fs.readFileSync(packageJsonPath, "utf-8"));
 
   if (typescript) {
-    execSync("pnpm add typescript && pnpm add -D @types/node", {
+    execSync("npm install typescript && npm install -D @types/node", {
       stdio: "inherit",
     });
-    execSync("pnpm tsc --init", { stdio: "inherit" });
+    execSync("npx tsc --init", { stdio: "inherit" });
   }
 
   if (eslint) {
     execSync(
-      "pnpm add -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin",
+      "npm install -D eslint @typescript-eslint/parser @typescript-eslint/eslint-plugin",
       { stdio: "inherit" }
     );
     fs.writeFileSync(
@@ -42,7 +42,7 @@ const initProject = (answers: Answers) => {
 
   if (prettier) {
     execSync(
-      "pnpm add -D prettier eslint-config-prettier eslint-plugin-prettier",
+      "npm install -D prettier eslint-config-prettier eslint-plugin-prettier",
       { stdio: "inherit" }
     );
     fs.writeFileSync(
@@ -70,9 +70,9 @@ const initProject = (answers: Answers) => {
   }
 
   if (husky) {
-    execSync("pnpm add -D husky lint-staged", { stdio: "inherit" });
-    execSync("pnpm husky init", { stdio: "inherit" });
-    fs.writeFileSync(path.join(".husky", "pre-commit"), "pnpm lint-staged", {
+    execSync("npm install -D husky lint-staged", { stdio: "inherit" });
+    execSync("npx husky init", { stdio: "inherit" });
+    fs.writeFileSync(path.join(".husky", "pre-commit"), "npm run lint-staged", {
       mode: 0o0755,
     });
     fs.writeFileSync(
@@ -90,10 +90,10 @@ const initProject = (answers: Answers) => {
   }
 
   if (tailwindcss && projectType === "react") {
-    execSync("pnpm add -D tailwindcss postcss autoprefixer", {
+    execSync("npm install -D tailwindcss postcss autoprefixer", {
       stdio: "inherit",
     });
-    execSync("pnpm tailwindcss init -p", { stdio: "inherit" });
+    execSync("npx tailwindcss init -p", { stdio: "inherit" });
     fs.writeFileSync(
       "tailwind.config.js",
       `module.exports = {
