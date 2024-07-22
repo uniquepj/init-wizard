@@ -26,7 +26,7 @@ npx init-wizard@latest
 #### Example
 
 ```bash
-$ npx init-wizard
+$ npx init-wizard@latest
 ? What type of project are you initializing? (Use arrow keys)
 ❯ React
   Node.js
