@@ -11,13 +11,11 @@ Project Initializer CLI is a command-line tool designed to help developers quick
 - **Husky & Lint-Staged:** Configures Husky and Lint-Staged for pre-commit hooks to ensure code quality before commits.
 - **TailwindCSS Installation:** Optionally adds TailwindCSS for utility-first CSS framework support.
 
-**NOTE:** init-wizard assumes you are currently using `npm` as package manager. We are adding compatibility for `pnpm` in later version soon.
+**NOTE:** init-wizard assumes you are currently using `npm` as package manager. We are adding compatibility for `pnpm`, `yarn` etc in later versions soon.
 
 #### Usage
 
 To initialize a new or existing project, navigate to your project directory and run:
-
-- npx (without downloading the package)
 
 ```bash
 npx init-wizard@latest
